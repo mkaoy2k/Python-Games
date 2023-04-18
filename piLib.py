@@ -13,9 +13,10 @@ Six methods to estimate π
 import random as rd
 import itertools
 import math
+from math import factorial as fact
 import numpy as np
 import decimal as dec
-from factorial007 import fact
+# from factorial007 import fact
 from functools import lru_cache
 
 # The following string 'exact_pi_val' contains 1001 correct digit of 𝜋.
