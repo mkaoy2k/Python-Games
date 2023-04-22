@@ -13,10 +13,8 @@ Six methods to estimate π
 import random as rd
 import itertools
 import math
-from math import factorial as fact
 import numpy as np
 import decimal as dec
-# from factorial007 import fact
 from functools import lru_cache
 
 # The following string 'exact_pi_val' contains 1001 correct digit of 𝜋.
@@ -118,11 +116,11 @@ def pi_chudnov(n, digits):
 
     dec.getcontext().prec = digits + 1
 
-    pi_chud = (((dec.Decimal(-1))**n) * (dec.Decimal(fact(6 * n)))
-               * (13591409 + 545140134 * n)) / dec.Decimal(
-        (fact(3 * n) * ((fact(n))**3)
-         * (640320**((3 * n) + (dec.Decimal(1.5))))
-         ))
+    pi_chud = (((dec.Decimal(-1))**n) * (dec.Decimal(math.factorial(6 * n))) 
+        * (13591409 + 545140134 * n)) / dec.Decimal(math.factorial(3 * n) 
+        * ((math.factorial(n))**3) 
+        * (640320**((3 * n) + (dec.Decimal(1.5)))))
+    
     if n > 0:
         pi_chud = pi_chud + pi_chudnov(n - 1, digits)
 
